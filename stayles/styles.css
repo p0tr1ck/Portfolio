@@ -170,12 +170,12 @@ input[type=submit]:hover{
   grid-gap: 2em;
 }
 footer {
-  background: var(--bg-color);
+  background: #3c166d ;
   text-align: center;
   padding: 3em 0;
   background-image: url(../images/footer.jpg);
 }
-footer ul{
+footer ul{ 
   text-decoration: none;
 
 }
