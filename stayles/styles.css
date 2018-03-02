@@ -1,65 +1,59 @@
 :root{
-  --primary-color: #5E0815;
-  --secondery-color: #90323D;
+  --primary-color: #af5c6a;
+  --secondery-color: #70101c;
   --accent-color: #BC8034;
   --bg-color: #D9CAB3;
   --shadow-color: #8C7A6B;
   font-family: helvetica;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body{
   padding: 0;
   margin: 0;
  font-size: 16px;
- background-image: url(../images/background.JPG);
+ background: url('../images/background.JPG') no-repeat;
 }
 
 nav{
   background: var( --secondery-color);
-  position: fixed 100%;
+  position: fixed;
+  width: 100%;
 }
 
-nav ul{
+nav{
   padding: 0;
   margin: 0;
   display: flex;
   width: 100%;
-  background: #3c166d;
-  color: var(--primary-color);
+  background: var(--primary-color);
+  color: var(--secondery-color);
+  opacity: 0.9;
 }
 
-nav ul:first-child{
-margin-left: 10%;
-}
-
-nav ul a {
+nav a {
   text-decoration:none;
   color:inherit;
   padding: 1em;
 }
 
-nav ul li{
-  list-style-type: none;
-  padding: 1em;
+nav a:first-child{
+margin-left: 10%;
 }
 
-nav ul li a{
-  text-decoration: none;
-  color: var(--accent-color);
-}
-
-nav ul li a:hover {
-  background: gold;
-  color: var(--secondery-color);
+nav a:hover {
+  background: var(--secondery-color);
+  color: var(--primary-color);
   cursor:pointer;
 }
 
+/* This is the styleling for the Header area */
 header {
   display: flex;
   height: 100vh;
   background: radial-gradient(var(--bg-color) 60%, var(--accent-color));
-  background-image: url(../images/header.jpg);
+  /* background: url('') no-repeat; */
 }
 
 div.headerfigere{
@@ -67,9 +61,8 @@ div.headerfigere{
   width: 200px;
 }
 
-img{
-  width: 250px;
-  height: 300px;
+header img{
+  width: 100%;
   border-radius: 4px;
   box-shadow: 5px 5px 3px rgba(0,0,0,0.5)
 
@@ -89,10 +82,15 @@ blockquote {
   width: 60%;
 }
 
-blockquote #saidBy {
+blockquote p:last-child {
   text-align: right;
   font-size: 0.8em;
 }
+
+blockquote p:last-child::before {
+  content: '-';
+}
+
 main{
   margin: 0 auto;
   width: 80%;
@@ -100,7 +98,6 @@ main{
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1em;
   justify-content: center;
-  background-image: url(../images/background.JPG);
 }
 
 main figure img {
@@ -109,15 +106,21 @@ main figure img {
 
 main figure {
   margin:  0;
-  border: 1px solid var(--shadow-color);
+  background: rgba(0, 0, 0, 0.1);
+  transition: filter 0.4s;
+}
+
+main figure:hover {
+  filter: hue-rotate(0.5turn) drop-shadow(1px 1px 5px lightGrey);
+  transition: filter 0.4s;
 }
 
 main figure figcaption h2,
 main figure figcaption p{
   color: var(--primary-color);
   text-align: center;
-  margin: 0.5em 0 0 0;
-  padding: 0 1em
+  margin: 0;
+  padding: 0.5em 1em
 }
 #contact {
   margin: 0 auto;
@@ -144,10 +147,10 @@ input[type=text], select, textarea{
     color: var(--accent-color);
     padding: 12px 20px;
     margin: 5px 0;
+    width: 100%;
     border: none;
     cursor: pointer;
     float: right;
-    width: 100px;
   }
 
   textarea{
@@ -164,30 +167,23 @@ input[type=submit]:hover{
 
 }
 #contact iframe {
-  width: 98%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   min-width: 280px;
-  grid-gap: 2em;
+  min-height: 280px;
 }
 footer {
   background: #3c166d ;
   text-align: center;
   padding: 3em 0;
-  background-image: url(../images/footer.jpg);
+  background: var(--accent-color);
 }
-footer ul{ 
-  text-decoration: none;
+
+footer ul li{
+  list-style-type: none;
 
 }
 footer a {
   text-decoration: none;
-  color: var(--primary-color)
-}
-a{
-  color: yellow;
-}
-a :hover{
-  background: gold;
-  color: var(--secondery-color);
-  cursor:pointer;
+  color: var(--secondery-color)
 }
